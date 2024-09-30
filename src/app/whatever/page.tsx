@@ -1,5 +1,5 @@
-import WhateverUnitBox from "./_components/WhateverItem"
-import styles from "./whatever.module.css"
+import WhateverUnitBox from "./_components/WhateverItem";
+import styles from "./whatever.module.css";
 
 export default function WhatEverPage() {
   return (
@@ -13,5 +13,5 @@ export default function WhatEverPage() {
         <WhateverUnitBox num={5} />
       </ul>
     </>
-  )
+  );
 }

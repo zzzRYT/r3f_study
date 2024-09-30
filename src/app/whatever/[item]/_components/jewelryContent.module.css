@@ -1,0 +1,16 @@
+.container {
+  display: grid; /* Grid 레이아웃 설정 */
+  grid-template-columns: repeat(5, 1fr); /* 3개의 열로 설정 */
+  grid-template-rows: repeat(5, 1fr); /* 3개의 행으로 설정 */
+  gap: 10px; /* 박스 간 간격 */
+  width: 100%; /* 원하는 너비 */
+  height: 300px; /* 원하는 높이 */
+  background-color: beige; /* 배경색 설정 */
+  border: 2px solid green; /* 테두리 설정 */
+}
+
+.jewelryBox {
+  background-color: lime; /* 초록색 배경 */
+  border: 1px solid green; /* 초록색 테두리 */
+  text-align: center; /* 가운데 정렬 */
+}
