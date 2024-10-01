@@ -13,4 +13,5 @@
   background-color: lime; /* 초록색 배경 */
   border: 1px solid green; /* 초록색 테두리 */
   text-align: center; /* 가운데 정렬 */
+  cursor: pointer;
 }

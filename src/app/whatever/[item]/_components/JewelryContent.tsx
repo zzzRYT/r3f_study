@@ -1,7 +1,14 @@
+"use client";
+
+import { Dispatch, SetStateAction } from "react";
 import getSelectJewelry from "../utils/getSelectJewelry";
 import style from "./jewelryContent.module.css";
 
-export default function JewelryContent() {
+interface JewelryContextProps {
+  setJewelry: Dispatch<SetStateAction<string>>;
+}
+
+export default function JewelryContent({ setJewelry }: JewelryContextProps) {
   const jewelry = {
     keyRing: [
       { name: "finishing", x: 3, y: 4 },
@@ -16,11 +23,16 @@ export default function JewelryContent() {
     ],
   };
 
+  const onClickSelectBox = (name: string) => {
+    setJewelry(name);
+  };
+
   return (
     <article className={style.container}>
       {jewelry.keyRing.map((item: any, index) => {
         return (
           <div
+            onClick={() => onClickSelectBox(item.name)}
             style={{ gridColumn: 6 - item.x, gridRow: 6 - item.y }}
             key={`${index}${item.name}`}
           >
