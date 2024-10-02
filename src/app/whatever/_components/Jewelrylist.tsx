@@ -16,6 +16,7 @@ const finishingJewelry = [
     finishingName: "마감 이름2",
     price: 2000,
   },
+  1,
 ];
 
 const pendantJewelry = [
@@ -52,17 +53,17 @@ export default function JewelryList() {
   const jewelry = useContext(JewelryContext);
   const [jewelryList, setJewelryList] = useState<any>([...finishingJewelry]);
 
-  const getSearchedJewelry = (jewelry: "finishing" | "pendant" | "chain") => {
+  const getSearchedJewelry = (jewelry: string) => {
     const obj = {
       pendant: () => setJewelryList([...pendantJewelry]),
       finishing: () => setJewelryList([...finishingJewelry]),
       chain: () => setJewelryList([...chainJewelry]),
-    };
+    } as const;
     return obj[jewelry];
   };
 
   useEffect(() => {
-    const searchJewelry = getSearchedJewelry(jewelry);
+    const searchJewelry = getSearchedJewelry(jewelry.jewelry);
     if (searchJewelry) {
       searchJewelry(); // 함수를 호출합니다.
     }

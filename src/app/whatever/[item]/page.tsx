@@ -4,14 +4,31 @@ import JewelryContent from "./_components/JewelryContent";
 import styles from "./whateverUnit.module.css";
 import JewelryList from "../_components/Jewelrylist";
 import { createContext, useState } from "react";
-export const JewelryContext = createContext<string>("");
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
+
+export interface JewelryContextType {
+  jewelry: string;
+  x: number;
+  y: number;
+}
+
+export const JewelryContext = createContext<JewelryContextType>({
+  jewelry: "",
+  x: 0,
+  y: 0,
+});
 
 export default function WhateverUnitPage({
   params,
 }: {
   params: { item: string };
 }) {
-  const [selectJewelry, setSelectJewelry] = useState<string>("");
+  const [selectJewelry, setSelectJewelry] = useState<JewelryContextType>({
+    jewelry: "",
+    x: 0,
+    y: 0,
+  });
   return (
     <>
       <header>whatever {params.item} 유닛임</header>
